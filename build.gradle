@@ -1,7 +1,10 @@
 plugins {
-	id 'java'
+  id 'java'
+  id 'org.springframework.boot' version '2.7.5'
   id("com.github.bjornvester.wsdl2java") version "1.2"
 }
+
+
 
 group = 'com.redhat.runtimes'
 version = '0.0.1-SNAPSHOT'
@@ -51,3 +54,8 @@ wsdl2java {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+/*
+bootJar {
+    mainClassName = 'com.redhat.runtimes.infinispan.example.InfinispanExampleApplication'
+}
+*/

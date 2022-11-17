@@ -6,6 +6,15 @@
 
 ## Building
 
+In order to have the bootJar task available, had to add the SpringBoot Gradle plugin explicitly:
+plugins {
+  id 'java'
+  `id 'org.springframework.boot' version '2.7.5'`
+  id("com.github.bjornvester.wsdl2java") version "1.2"
+}
+
+https://www.baeldung.com/spring-boot-gradle-plugin
+
 ```bash
 ./gradlew compileJava bootJar
 ```
@@ -15,7 +24,8 @@
 1. Start an instance of Infinispan using a container as follows:
    `podman run --name datagrid -d -p 11222:11222 -p 11223:11223 -p 7800:7800 -e USER=admin -e PASS=admin registry.redhat.io/datagrid/datagrid-8-rhel8:latest`
 2. Run the SpringBoot application
-   `java -jar ./build/libs/infinispan-example-0.0.1-SNAPSHOT.jar
+   `java -jar ./build/libs/infinispan-example-0.0.1-SNAPSHOT.jar`
+
 
 ## Adding Artificial Latency For Data Grid
 
